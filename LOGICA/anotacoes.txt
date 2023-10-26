@@ -18,6 +18,18 @@ Por que uma empresa procuraria um dev. para criar um programa da própria empres
     Para gerar mais lucro. Com a tecnologia é possível garantir mais segurança e a efetividade
     da empresa, pois a velocidade de transição de dados e etc é quase instantânia.
 
+Tipos de dados:
+    *Numéricos
+       - Inteiros (int)
+       - Reais (float)
+    *Lógicos
+       - Verdadeiro ou Falso (true or false)
+    *Literais
+       - Caracteres (char)
+         --> Para inicializar uma var. "char", usa-se ASPAS SIMPLES ('')
+       - Cadeias (string)
+         --> Para inicializar uma var. "string", usa-se ASPAS DUPLAS ("")
+
 let salas = []
 
 if(!isNaN(especificarSala)){
