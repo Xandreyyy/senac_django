@@ -1,0 +1,19 @@
+OBJETO
+* abstração do mundo físico;
+* atributos (substantivo);
+* métodos (verbo no infinitivo).
+
+CLASSE
+* herança
+     ↑
+"especialização" (classe mãe)
+                      ↑
+                  o novo objeto
+                 herda atributos
+
+* métodos GETTER e SETTER
+     -> receber valor do atributo (getter)
+     -> atribuir valor ao atributo (setter)
+
+* Métodos PRIVADOS (private): só podem ser acessados através de métodos;
+* Métodos PÚBLICOS (public): podem ser acessados de qualquer parte do arquivo.
