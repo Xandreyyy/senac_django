@@ -1,6 +1,7 @@
 from os import system
 import pprint as pp
-import datetime as dt
+import validations as val
+# import datetime as dt
 
 parkingfee = 0
 data = {
@@ -9,6 +10,18 @@ data = {
     "leave_date": 0,
     "leave_time": 0
 }
+
+def switch(value):
+  global parkingfee
+  if(value >= 5):
+    parkingfee = 5
+    return parkingfee
+  elif(value <= 2):
+    parkingfee = 10
+    return parkingfee
+  else:
+    parkingfee = 11
+    return parkingfee
 
 def welcomeMsg():
   print(f"\t\t{'︵'*14}\n\t\t{'┃'}BEM-VINDO AO VIMAPARK!{'┃'}\n\t\t{'︶'*14}")
@@ -26,53 +39,41 @@ def welcomeMsg():
       system("cls")
       print('Insira apenas "ok" ou "q"!')
 
-def switch(value):
-  global parkingfee
-  if(value >= 5):
-    parkingfee = 5
-    return parkingfee
-  elif(value <= 2):
-    parkingfee = 10
-    return parkingfee
-  else:
-    parkingfee = 11
-    return parkingfee
-
 def inputFields():
   while True:
     arriveDate = input("Insira a data atual: ")
-    if(validateDate(arriveDate) == False):
+    if(val.date(arriveDate) == False):
       print("Data inválida!")
       continue
     else:
-      data.update({"arrived_date": validateDate(arriveDate)})
+      data.update({"arrived_date": val.date(arriveDate)})
       pp.pp(data)
 
     arriveTime = input("Insira a hora atual: ")
-    if(validateTime(arriveTime) == False):
+    if(val.time(arriveTime) == False):
       print("Hora inválida!")
       continue
     else:
-      data.update({"arrived_time": validateTime(arriveTime)})
+      data.update({"arrived_time": val.time(arriveTime)})
       print("Obrigado! Divirta-se no VIMAPARK!")
       system("cls")
 
     print("VIMAPARK espera que você tenha se divertido! Para efetuar o pagamento\nda tarifa do estacionamento, por favor, insira as informações com o\nseguinte formato:\n\t\t HH:MM (horário) e DD.MM.AAA (dia)")
     pp.pp(data)
     leaveDate = input("\nInsira a data atual: ")
-    if(validateDate(leaveDate) == False):
+    if(val.date(leaveDate) == False):
       print("Data inválida!")
       continue
     else:
-      data.update({"leave_date": validateDate(leaveDate)})
+      data.update({"leave_date": val.date(leaveDate)})
       pp.pp(data)
 
     leaveTime = input("Insira a hora atual: ")
-    if(validateTime(leaveTime) == False):
+    if(val.time(leaveTime) == False):
       print("Hora inválida!")
       continue
     else:
-      data.update({"leave_time": validateTime(leaveTime)})
+      data.update({"leave_time": val.time(leaveTime)})
       pp.pp(data)
       break
 
