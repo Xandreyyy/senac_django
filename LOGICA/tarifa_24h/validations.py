@@ -1,4 +1,4 @@
-def validateDate(ipt):
+def date(ipt):
   def isLeapYear(year):
     if(year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
       return 29
@@ -25,7 +25,7 @@ def validateDate(ipt):
     else: return False
   else: return False
 
-def validateTime(ipt):
+def time(ipt):
   timeList = []
   ipt = ipt.strip()
   dotsIndex = ipt.find(":")

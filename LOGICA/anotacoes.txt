@@ -18,6 +18,13 @@ Por que uma empresa procuraria um dev. para criar um programa da própria empres
     Para gerar mais lucro. Com a tecnologia é possível garantir mais segurança e a efetividade
     da empresa, pois a velocidade de transição de dados e etc é quase instantânia.
 
+DADOS PRIMITIVOS E DADOS NÃO PRIMITIVOS:
+    Dados primitivos são os pilares da manipulação de dados, eles apenas contém simples e PURO valores de dados:
+    str, ints, float e bool.
+
+    Dados não primitivos são aqueles que armazenam vários dados primitivos, estruturas que armazenam dados:
+    lists, sets, tuples, dicts
+
 Tipos de dados:
     *Numéricos
        - Inteiros (int)
@@ -30,35 +37,4 @@ Tipos de dados:
        - Cadeias (string)
          --> Para inicializar uma var. "string", usa-se ASPAS DUPLAS ("")
 
-let salas = []
-
-if(!isNaN(especificarSala)){
-    for (let i = 0; i < especificarSala; i++){
-        salas.push(criarSalas(i))
-    }
-}else{
-    alert("Você precisa inserir um número!")
-}
-
-function criarSalas(n) {
-    return{
-        n_sala: n,
-        defeito: false
-    }
-}
-
-function mostrarMsg(num) {
-    const especificarSala = null
-    switch(num){
-        case 1:
-            return especificarSala = prompt("Insira a quantidade de salas: ")
-            break
-        case 2:
-            return especificarSala = prompt("Agora, por favor, eu te imploro, me diz qual é a sala que deve ter a lâmpada danificada? ")
-            break
-        default:
-            alert(`Erro! O valor de especificarSala é ${especificar}. Apenas 1 ou 2`)
-    }
-}
-
-
+CÓDIGO-FONTE: tudo aquilo que faz a aplicação existir.
