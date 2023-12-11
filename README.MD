@@ -2,10 +2,8 @@
 # welcome to my profile!
 
 <div style="display: flex">
-  <a href="https://github.com/Xandreyyy">
     <img width="48%" height="400px" alt="Xandreyyy's stats" src="https://github-readme-stats.vercel.app/api?username=Xandreyyy&theme=noctis_minimus&show_icons=true"/>
     <img width="48%" height="400px" alt="Xandreyyy's languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xandreyyy&hide_progress=true"/>
-  </a>
 </div>
 
 ### 📑about:
