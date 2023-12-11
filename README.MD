@@ -1,8 +1,12 @@
 
 # welcome to my profile!
 
-![Xandreyyy's stats](https://github-readme-stats.vercel.app/api?username=Xandreyyy&theme=noctis_minimus&show_icons=true)
-![Xandreyyy's languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Xandreyyy&hide_progress=true)
+
+<div>
+  <a href="https://github.com/Xandreyyy">
+  <img width="50%" height="400px" alt="Xandreyyy's stats" src="https://github-readme-stats.vercel.app/api?username=Xandreyyy&theme=noctis_minimus&show_icons=true"/>
+  <img width="50%" height="400px" alt="Xandreyyy's languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xandreyyy&hide_progress=true"/>
+</div>
 
 ### 📑about:
 
