@@ -1,5 +1,5 @@
 git merge <nome branch> -> mesclar/juntar branches. O Git irá mergear a branch atual
                            (que você estão posicionado) com a branch fornecida;
 
-git checkout -b <nome branch> -> criar nova branch e mover até ela;
+git checkout -b <nome branch> -> criar nova branch e move até ela;
 git checkout <nome branch> -> mover de branch.

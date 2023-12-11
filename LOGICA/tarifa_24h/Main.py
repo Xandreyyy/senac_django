@@ -1,9 +1,7 @@
 from os import system
-import pprint as pp
 import validations as val
-# import datetime as dt
+import datetime as dt
 
-parkingfee = 0
 data = {
     "arrived_date": 0,
     "arrived_time": 0,
@@ -12,7 +10,7 @@ data = {
 }
 
 def switch(value):
-  global parkingfee
+  parkingfee = int()
   if(value >= 5):
     parkingfee = 5
     return parkingfee
@@ -39,48 +37,41 @@ def welcomeMsg():
       system("cls")
       print('Insira apenas "ok" ou "q"!')
 
+def addDate(iptDate):
+  validChars = [".", "/"]
+
+  for char in validChars:
+    if(char in iptDate):
+      dataList = iptDate.split(char)
+
+  dataList = list(map(int, dataList))
+  return dataList
+
+def addTime(iptTime):
+  timeList = iptTime.split(":")
+  timeList = list(map(int, timeList))
+  return timeList
+
 def inputFields():
   while True:
     arriveDate = input("Insira a data atual: ")
-    if(val.date(arriveDate) == False):
-      print("Data inválida!")
-      continue
-    else:
-      data.update({"arrived_date": val.date(arriveDate)})
-      pp.pp(data)
+    if(val.date(arriveDate) == True):
+      data.update({"arrived_date": addDate(arriveDate)})
 
     arriveTime = input("Insira a hora atual: ")
-    if(val.time(arriveTime) == False):
-      print("Hora inválida!")
-      continue
-    else:
-      data.update({"arrived_time": val.time(arriveTime)})
-      print("Obrigado! Divirta-se no VIMAPARK!")
-      system("cls")
+    if(val.time(arriveTime) == True):
+      data.update({"arrived_time": addTime(arriveTime)})
 
     print("VIMAPARK espera que você tenha se divertido! Para efetuar o pagamento\nda tarifa do estacionamento, por favor, insira as informações com o\nseguinte formato:\n\t\t HH:MM (horário) e DD.MM.AAA (dia)")
-    pp.pp(data)
+
     leaveDate = input("\nInsira a data atual: ")
-    if(val.date(leaveDate) == False):
-      print("Data inválida!")
-      continue
-    else:
-      data.update({"leave_date": val.date(leaveDate)})
-      pp.pp(data)
+    if(val.date(leaveDate) == True):
+      data.update({"leave_date": addDate(leaveDate)})
 
     leaveTime = input("Insira a hora atual: ")
-    if(val.time(leaveTime) == False):
-      print("Hora inválida!")
-      continue
-    else:
-      data.update({"leave_time": val.time(leaveTime)})
-      pp.pp(data)
+    if(val.time(leaveTime) == True):
+      data.update({"leave_time": addTime(leaveTime)})
       break
-
-# def validarData(ipt):
-#   padraoData = '%d.%m.%Y %H:%M'
-#   data = '21.02.2005 14:45'
-#   return dt.datetime.strptime(data, padraoData)
 
 def convertMinToHours():
   arrivedMinutesValue = data["arrived_time"]
@@ -96,7 +87,9 @@ def convertDaysToHours():
   leaveDateValues = data["leave_date"]
   arrivedDay = arrivedDateValues[0]
   leaveDay = leaveDateValues[0]
+
   if(arrivedDay == leaveDay): return False
+
   totalDays = leaveDay - arrivedDay
   daysInHours = totalDays * 24
   return daysInHours
@@ -107,6 +100,7 @@ def calcTotalHours():
   arrivedHours = arrivedHoursValue[0]
   leaveHours = leaveHoursValue[0]
   totalHours = 0
+
   if(convertDaysToHours() == False):
     totalHours = (leaveHours - arrivedHours) + convertMinToHours()
   else:
@@ -117,28 +111,22 @@ def calcTotalHours():
   return int(totalHours)
 
 def calcFee():
-  payment = calcTotalHours() * switch(calcTotalHours())
-  return payment
+  parkingfee = switch(calcTotalHours())
+  payment = calcTotalHours() * parkingfee
+  return parkingfee, payment
 
 def printResult():
   def numberToString(l, printType):
     string = str()
     match printType:
       case "date":
-        for num in range(len(l)):
-          l[num] = str(l[num])
-          if(num < 2): string += f"{l[num]}/"
-          else: string += f"{l[num]}"
+        string = '/'.join(map(str, l))
         return string
       case "time":
-        for num in range(len(l)):
-          l[num] = str(l[num])
-          if(num == 0):
-            string += f"{l[num]}:"
-          else: string += f"{l[num]}"
-        return string
+        string = dt.datetime.strptime(':'.join(map(str, l)), "%H:%M").time()
+        return str(string)[:-3]
 
-  system("cls")
+  #system("cls")
   print(f'{("="*33)}')
   print(f'┃    VIMAPARK ESTACIONAMENTO   \t┃')
   print(f'┃\t\t\t     \t┃')
@@ -147,8 +135,8 @@ def printResult():
   print(f"┃Data de saída: {numberToString(data['leave_date'], 'date')}    \t┃")
   print(f"┃Hora de chegada: {numberToString(data['leave_time'], 'time')}     \t┃")
   print(f'┃\t\t\t     \t┃')
-  print(f'┃Taxa aplicada: R$5/h     \t┃')
-  print(f'┃Total: R$100     \t\t┃')
+  print(f'┃Taxa aplicada: R${calcFee()[0]}/h     \t┃')
+  print(f'┃Total: R${calcFee()[1]}     \t\t┃')
   print(f'{("="*33)}')
 
 welcomeMsg()
