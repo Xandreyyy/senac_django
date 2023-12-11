@@ -16,6 +16,8 @@ equipe e colaborar efetivamente com outros membros. -->
 
 ![Sass logo](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![Bootstrap logo](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-#### studying...:
+![Git logo](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
+### studying..:
 ![NodeJS logo](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Python logo](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
