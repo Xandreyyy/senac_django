@@ -1,4 +1,6 @@
 import tkinter as tk
+# tkinter = toolkit interface
+# https://tcl.tk/man/tcl8.6/TkCmd/contents.htm
 
 # gera o frame
 window = tk.Tk()
