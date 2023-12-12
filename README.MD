@@ -2,7 +2,7 @@
 # welcome to my profile!
 
 <div>
-    <a href="https://github.com/Xandreyyy" style="display: grid; grid-template-columns: repeat(2, 48%); column-gap: 2rem">
+    <a href="https://github.com/Xandreyyy" style="display: grid; grid-template-columns: repeat(2, 48%); grid-template-rows: 10rem; column-gap: 2rem;">
         <img height="100%" alt="Xandreyyy's stats" src="https://github-readme-stats.vercel.app/api?username=Xandreyyy&theme=noctis_minimus&show_icons=true"/>
         <img height="100%" alt="Xandreyyy's languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xandreyyy&hide_progress=true"/>
     </a>
