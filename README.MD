@@ -1,14 +1,16 @@
 
 # welcome to my profile!
 
-<div style="display: flex;">
-    <img height="200px" alt="Xandreyyy's stats" src="https://github-readme-stats.vercel.app/api?username=Xandreyyy&theme=noctis_minimus&show_icons=true"/>
-    <img height="200px" alt="Xandreyyy's languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xandreyyy&hide_progress=true"/>
+<div>
+    <a href="github.com/Xandreyyy" style="display: flex;">
+        <img height="200px" alt="Xandreyyy's stats" src="https://github-readme-stats.vercel.app/api?username=Xandreyyy&theme=noctis_minimus&show_icons=true"/>
+        <img height="200px" alt="Xandreyyy's languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Xandreyyy&hide_progress=true"/>
+    </a>
 </div>
 
 ### 📑about:
 
-Olá! Eu sou um futuro desenvolvedor front-end. Tenho um certo domínio em HTML5, CSS3, Sass, JavaScript, controlador de versionamento, o Git, e
+Olá! Eu sou um futuro desenvolvedor front-end. Tenho um certo domínio em HTML5, CSS3, Sass, JavaScript, o controlador de versionamento Git, e
 o framework Bootstrap! Atualmente meu foco de estudos é Python voltado às construções de interfaces, usando tkinter.
 <!-- sou hábil em resolução de problemas, facilidade com comunicação interpessoal, assim como capacidade de trabalhar em
 equipe e colaborar efetivamente com outros membros. -->
