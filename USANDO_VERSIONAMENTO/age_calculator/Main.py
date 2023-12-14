@@ -7,6 +7,8 @@ def calc_years_old() -> None:
     person1 = Person(i_nome.get(), dt(int(i_year.get()), int(i_month.get()), int(i_day.get())))
     messagebox.showinfo(title = 'RESULTADO', message = person1.get_years())
 
+
+
 def reset_input() -> None:
     ipts = [i_nome, i_day, i_month, i_year]
     for ipt in ipts:
@@ -16,6 +18,7 @@ def reset_input() -> None:
 root = tk.Tk()
 root.geometry('400x450')
 root.title("AGE CALCULATOR")
+root.resizable(False, False)
 
 # criar labels
 name = tk.Label(root, text = 'Insira seu nome: ', padx = 2, font = ('sans-serif', 12, 'bold'))
