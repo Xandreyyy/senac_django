@@ -8,8 +8,8 @@ class Factorial:
     
     def get_factorial(self):
         try:
-            user_num = int(self.num)
-            result = 1
+            user_num, result = int(self.num), 1
+
             for num in range(user_num, 0, -1): # começa no número inserido, termina quando chegar a 1, incrementador = -1
                 result *= num
             return result
