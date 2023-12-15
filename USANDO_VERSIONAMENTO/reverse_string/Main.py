@@ -13,6 +13,7 @@ root.title('REVERSE WORDS v300 by Leonidas (300 SPARTANS vs 30k PERSIANS) GAMER 
 
 # o wrapper da parte direita
 frame = tk.Frame(root)
+frame.grid(row = 0, column = 1, sticky = 'w')
 
 # labels
 label = tk.Label(root, text = 'Enter a word:', font = ('Arial', 15))
@@ -30,5 +31,4 @@ ipt.grid(row = 0, column = 1, padx = 3)
 btn = tk.Button(frame, text = 'REVERSE', command = reverse_input, width = 15, height = 2)
 btn.grid(row = 2, column = 1, sticky = 'wn')
 
-frame.grid(row = 0, column = 1, sticky = 'w')
 root.mainloop()

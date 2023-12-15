@@ -7,7 +7,11 @@ class Factorial:
         return self.__num
     
     def get_factorial(self):
-        result = 1
-        for num in range(self.num, 0, -1): # começa no número inserido, termina quando chegar a 1, incrementador = -1
-            result *= num
-        return result
+        try:
+            user_num = int(self.num)
+            result = 1
+            for num in range(user_num, 0, -1): # começa no número inserido, termina quando chegar a 1, incrementador = -1
+                result *= num
+            return result
+        except ValueError:
+            return 'Insira um número!'
