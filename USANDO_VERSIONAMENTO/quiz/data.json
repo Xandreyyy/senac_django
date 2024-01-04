@@ -1,0 +1,30 @@
+{
+    "questions": [
+        {"q1": "Qual é o país mais antigo do mundo?",
+        "right_answer": "Japão"
+        },
+
+        {"q2": "Quem é o autor da frase: 'Penso, logo existo'?",
+        "right_answer": "Descartes"
+        },
+
+        {"q3": "Qual é a população de Tóquio?",
+        "right_answer": 13.96
+        },
+
+        {"q4": "Qual é o ano de lançamento da 1ª versão de Tekken?",
+        "right_answer": 1994
+        },
+
+        {"q5": "Quem inventou a programação?",
+        "right_answer": "Charles Babbage"
+        }
+    ],
+    "answers": [
+        {"q1": ["Brasil", "Inglaterra", "Egito", "Israel", "Japão"]},
+        {"q2": ["Sócrates", "Heráclito", "Descartes", "Neymar", "Pondê"]},
+        {"q3": ["900mil", "60.2mi", "6.89mi", "16.32mi", "13.96mi"]},
+        {"q4": ["1994", "1974", "1964", "34 a.C", "34 d.C"]},
+        {"q5": ["Leonardo Di Caprio", "Elon Musk", "Alan Turing", "Alanzoka", "Charles Babbage"]}
+    ]
+}
