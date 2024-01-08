@@ -8,7 +8,6 @@ root = tk.Tk()
 root.geometry('400x400')
 root.resizable(False, False)
 root.title('Radio button')
-root.iconbitmap("C:/Users/Aluno/senac_django/PYTHON_POO/aula/src/bedwars.ico")
 
 label = tk.Label(root, text = 'Escolha o tamanho: ')
 label.grid()
@@ -19,7 +18,7 @@ tamanhos = (('Pequeno', 'P'),
             ('Grande', 'G'),
             ('Extra Grande', 'XG'),
             ('Extra Extre Grande', 'XXG')
-            )
+           )
 
 for i in range(len(tamanhos)):
     rd = tk.Radiobutton(root, text = tamanhos[i][0], value = tamanhos[i][1], variable = tamanho_selecionado, padx = 3, pady = 3)
