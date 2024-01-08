@@ -9,11 +9,11 @@
         },
 
         {"q3": "Qual é a população de Tóquio?",
-        "right_answer": 13.96
+        "right_answer": "13.96mi"
         },
 
         {"q4": "Qual é o ano de lançamento da 1ª versão de Tekken?",
-        "right_answer": 1994
+        "right_answer": "1994"
         },
 
         {"q5": "Quem inventou a programação?",

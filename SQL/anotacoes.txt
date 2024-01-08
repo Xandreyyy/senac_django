@@ -1,0 +1,20 @@
+Linguagem SQL -> Structure Query Language
+    Linguagem script, realiza tarefas através de scripts
+
+SGBD -> Sistema Gereneciador de Banco de Dados
+    SQLite: mobile
+    MySQL: mobile/desktop
+    MariDB: mobile/desktop
+
+PostgreSQL -> estrutura robusta, grátis
+Oracle -> estrutura robusta, pago
+
+SQL -> Banco de dados relacional. Relaciona dados, organiza esses dados de forma tabular
+NoSQL -> Banco de dados não-relacional
+
+DDL (data definition language) - Linguagem de definição de dados
+DML (data manipulation language) - Linguagem de manipulação de dados
+
+tipo de dados:
+    CHAR -> 1 caractere (4 bytes)
+    VARCHAR -> definimos os caracteres
