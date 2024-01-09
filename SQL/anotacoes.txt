@@ -1,7 +1,7 @@
 Linguagem SQL -> Structure Query Language
     Linguagem script, realiza tarefas através de scripts
 
-SGBD -> Sistema Gereneciador de Banco de Dados
+SGBD -> Sistema Gereneciador de Banco de Dados // NÃO É O BANCO DE DADOS, seria uma "IDE"
     SQLite: mobile
     MySQL: mobile/desktop
     MariDB: mobile/desktop
@@ -18,3 +18,24 @@ DML (data manipulation language) - Linguagem de manipulação de dados
 tipo de dados:
     CHAR -> 1 caractere (4 bytes)
     VARCHAR -> definimos os caracteres
+
+======================================
+
+PADRÃO DE CONSTRUÇÃO, MVC:
+
+M -> Model: relacionado aos componentes do controller
+V -> View: relacionado ao frontend
+C -> Controller: relacionado ao backend
+-----------------
+M -> manipulação de dados
+V -> interação com o usuário
+C -> camada de controle
+
+No SQL:
+  Objeto = Tabela
+  Atributos = Campos
+
+DROP deleta em colunas
+DELETE delete em linhas
+
+* Com DELETE e UPDATE, usa-se a clausula WHERE

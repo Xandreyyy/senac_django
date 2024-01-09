@@ -12,6 +12,7 @@ class Quiz:
         self.__answer = str()
         self.__user_answer = tk.StringVar(value = ' ')
         self.__score = int()
+        self.__misses = int()
         self.load_data()
         self.display_title()
         self.generate_question_label()
@@ -47,33 +48,41 @@ class Quiz:
     def screen_elements(self) -> list:
         return self.__screen_elements
 
+    @property
+    def misses(self) -> int:
+        return self.__misses
+
     @questions.setter
-    def questions(self, questions_list: list):
+    def questions(self, questions_list: list) -> None:
         self.__questions = questions_list
 
     @answers.setter
-    def answers(self, answers_list: list):
+    def answers(self, answers_list: list) -> None:
         self.__answers = answers_list
 
     @question.setter
-    def question(self, question: str):
+    def question(self, question: str) -> None:
         self.__question = question
 
     @answer.setter
-    def answer(self, answer: str):
+    def answer(self, answer: str) -> None:
         self.__answer = answer
 
     @user_answ.setter
-    def user_answ(self, answer: str):
+    def user_answ(self, answer: str) -> None:
         self.__user_answer = answer
     
-    @score.setter
-    def score(self, score: int):
-        self.__score = score
-    
     @screen_elements.setter
-    def screen_elements(self, screen_el: tk):
+    def screen_elements(self, screen_el: tk) -> None:
         self.__screen_elements = screen_el
+
+    @score.setter
+    def score(self, score: int) -> None:
+        self.__score = score
+
+    @misses.setter
+    def misses(self, miss) -> None:
+        self.__misses = miss
 
     # BACK -----
     def load_data(self) -> None:
@@ -95,7 +104,8 @@ class Quiz:
 
         self.question = question_keys[0] # select the question number (q1, q2, etc...)
         self.answer = question_values[1] # select the right answer
-        
+
+        self.questions.pop(random_question)
         return random_question
 
     def get_question(self) -> str:
@@ -103,17 +113,19 @@ class Quiz:
 
         return question.get(self.question) # return the question number value, ex: p1: <question> -> return the "<question> text"
     
-    def next_button(self):
+    def next_button(self) -> None:
         answer = self.user_answ.get()
 
-        if answer != ' ':
+        if answer != ' ' and len(self.questions) != 0:
+
             if answer == self.answer:
                 self.score += 1
-            
+            else:
+                self.misses += 1
+
             self.display_elements()
-            messagebox.showwarning(title = "ALTERNATIVA", message = f"Resposta: {self.answer}\nPontos: {self.score}")
-        else:
-            messagebox.showwarning(title = "ERRO", message = "Você precisa selecionar uma alternativa!")
+        elif len(self.questions) == 0:
+            messagebox.showinfo(title = "JOGO TERMINADO", message = f"Acertos: {self.score}\nErros: {self.misses}")
     # BACK -----
 
     # GUI  -----
@@ -153,14 +165,14 @@ class Quiz:
     def display_elements(self) -> None:
         self.screen_elements[0]['text'] = self.get_question()
         answers_text = self.get_answers_question()
-        count = 0
+        i = 0
 
         for element in self.screen_elements:
             if self.screen_elements.index(element) != 0:
-                element['text'] = answers_text[count]
-                element['value'] = answers_text[count]
+                element['text'] = answers_text[i]
+                element['value'] = answers_text[i]
 
-                count += 1
+                i += 1
 
     def display_next_button(self):
         next_btn = tk.Button(root, text = 'PRÓXIMA', command = self.next_button)
