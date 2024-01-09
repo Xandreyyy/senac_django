@@ -14,8 +14,9 @@ class Quiz:
         self.__score = int()
         self.load_data()
         self.display_title()
-        self.generate_question()
-        self.generate_answers()
+        self.generate_question_label()
+        self.generate_answers_buttons()
+        self.display_elements()
         self.display_next_button()
 
     @property
@@ -87,7 +88,7 @@ class Quiz:
         random_question_index = random.randint(0, len(self.questions) - 1)
         return random_question_index
     
-    def new_question(self) -> str: #Q1, right answer, question text
+    def select_question(self) -> int:
         random_question = self.random_question()
         question_keys = list(self.questions[random_question].keys())
         question_values = list(self.questions[random_question].values())
@@ -95,7 +96,11 @@ class Quiz:
         self.question = question_keys[0] # select the question number (q1, q2, etc...)
         self.answer = question_values[1] # select the right answer
         
-        question = self.questions[random_question]
+        return random_question
+
+    def get_question(self) -> str:
+        question = self.questions[self.select_question()]
+
         return question.get(self.question) # return the question number value, ex: p1: <question> -> return the "<question> text"
     
     def next_button(self):
@@ -105,8 +110,7 @@ class Quiz:
             if answer == self.answer:
                 self.score += 1
             
-            self.display_question()
-            self.display_anwers()
+            self.display_elements()
             messagebox.showwarning(title = "ALTERNATIVA", message = f"Resposta: {self.answer}\nPontos: {self.score}")
         else:
             messagebox.showwarning(title = "ERRO", message = "Você precisa selecionar uma alternativa!")
@@ -117,13 +121,13 @@ class Quiz:
         h1 = tk.Label(root, text = 'QUIZIZINHO', font = ('Arial', 34, 'bold'), bg = 'darkblue', fg = 'white', pady = 5)
         h1.grid(row = 0, column = 0, sticky = 'ew')
 
-    def generate_question(self) -> None:
+    def generate_question_label(self) -> None:
         question_text = tk.Label(root)
 
         self.screen_elements.append(question_text)
         question_text.grid(row = 1, column = 0, sticky = 'w')
 
-    def generate_answers(self) -> None:
+    def generate_answers_buttons(self) -> None:
         answers_frame = tk.Frame(root)
         first_list = self.answers[0]["q1"]
         count = 0
@@ -139,21 +143,25 @@ class Quiz:
 
         answers_frame.grid(row = 2, column = 0, sticky = 'w')
 
-    def display_question(self) -> None:
-        for element in self.screen_elements:
-            if self.screen_elements.index(element) == 0:
-                element['text'] = self.new_question()
-            else:
-                self.display_anwers()
-
-    def display_anwers(self) -> None:
+    def get_answers_question(self) -> list:
         for answer in self.answers:
             question_number = list(answer.keys())[0]
 
             if question_number == self.question:
-                self.generate_answers(answer[question_number])
-                return
-    
+                return list(answer.values())[0]
+
+    def display_elements(self) -> None:
+        self.screen_elements[0]['text'] = self.get_question()
+        answers_text = self.get_answers_question()
+        count = 0
+
+        for element in self.screen_elements:
+            if self.screen_elements.index(element) != 0:
+                element['text'] = answers_text[count]
+                element['value'] = answers_text[count]
+
+                count += 1
+
     def display_next_button(self):
         next_btn = tk.Button(root, text = 'PRÓXIMA', command = self.next_button)
         next_btn.grid(row = 3, column = 0, sticky = 'w')
