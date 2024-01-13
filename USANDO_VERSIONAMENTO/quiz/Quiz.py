@@ -7,7 +7,7 @@ class Quiz:
     def __init__(self) -> None:
         self.__questions = list()
         self.__answers = list()
-        self.__question_number = int()
+        self.__question_index = int()
         self.__screen_elements = list()
         self.__question = str()
         self.__answer = str()
@@ -52,10 +52,10 @@ class Quiz:
     @property
     def misses(self) -> int:
         return self.__misses
-
+    
     @property
-    def question_number(self) -> int:
-        return self.__question_number
+    def question_index(self) -> int:
+        return self.__question_index
 
     @questions.setter
     def questions(self, questions_list: list) -> None:
@@ -88,10 +88,10 @@ class Quiz:
     @misses.setter
     def misses(self, miss) -> None:
         self.__misses = miss
-
-    @question_number.setter
-    def question_number(self, number) -> None:
-        self.__question_number = number
+    
+    @question_index.setter
+    def question_index(self, index) -> None:
+        self.__question_index = index
 
     # BACK -----
     def load_data(self) -> None:
@@ -103,22 +103,19 @@ class Quiz:
         self.answers = questions_and_answers['answers']
     
     def random_question(self) -> int:
-        random_question_index = random.randint(0, len(self.questions) - 1)
-        print(f"\nEscolhido: {random_question_index}")
-        print(f"Len: {len(self.questions)}")
-        self.question_number = random_question_index
-
+        random_question_index = random.randint(0, len(self.questions) -1)
+        self.question_index = random_question_index
         return random_question_index
     
     def select_question(self) -> int:
-        random_question = self.random_question()
-        question_keys = list(self.questions[random_question].keys())
-        question_values = list(self.questions[random_question].values())
+        self.random_question()
+        question_keys = list(self.questions[self.question_index].keys())
+        question_values = list(self.questions[self.question_index].values())
 
         self.question = question_keys[0] # select the question number (q1, q2, etc...)
         self.answer = question_values[1] # select the right answer
 
-        return random_question
+        return self.question_index
 
     def get_question(self) -> str:
         question = self.questions[self.select_question()]
@@ -126,19 +123,28 @@ class Quiz:
         return question.get(self.question) # return the question number value, ex: p1: <question> -> return the "<question> text"
     
     def next_button(self) -> None:
-        answer = self.user_answ.get()
 
-        if answer != ' ' and len(self.questions) != 0:
+        if len(self.questions) > 1:
 
-            if answer == self.answer:
-                self.score += 1
+            if self.user_answ.get() != ' ':
+                
+                self.calc_score()
+                self.user_answ.set(' ')
+                self.questions.pop(self.question_index)
+                self.display_elements()
             else:
-                self.misses += 1
+                messagebox.showerror(title = "ERRO", message = "Você precisa selecionar uma alternativa!")
 
-            self.questions.pop(self.question_number)
-            self.display_elements()
-        elif len(self.questions) == 0:
-            messagebox.showinfo(title = "JOGO TERMINADO", message = f"Acertos: {self.score}\nErros: {self.misses}")
+        else:
+            self.calc_score()
+            messagebox.showinfo(title = "FIM DE JOGO", message = f"Acertos: {self.score}\nErros: {self.misses}")
+            root.destroy()
+    
+    def calc_score(self) -> None:
+        if self.user_answ.get() == self.answer:
+            self.score += 1
+        else:
+            self.misses += 1
     # BACK -----
 
     # GUI  -----
