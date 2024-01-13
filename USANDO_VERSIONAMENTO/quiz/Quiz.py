@@ -7,6 +7,7 @@ class Quiz:
     def __init__(self) -> None:
         self.__questions = list()
         self.__answers = list()
+        self.__question_number = int()
         self.__screen_elements = list()
         self.__question = str()
         self.__answer = str()
@@ -52,6 +53,10 @@ class Quiz:
     def misses(self) -> int:
         return self.__misses
 
+    @property
+    def question_number(self) -> int:
+        return self.__question_number
+
     @questions.setter
     def questions(self, questions_list: list) -> None:
         self.__questions = questions_list
@@ -84,6 +89,10 @@ class Quiz:
     def misses(self, miss) -> None:
         self.__misses = miss
 
+    @question_number.setter
+    def question_number(self, number) -> None:
+        self.__question_number = number
+
     # BACK -----
     def load_data(self) -> None:
         with open("./USANDO_VERSIONAMENTO/quiz/data.json", encoding = 'UTF-8') as data_quiz:
@@ -95,6 +104,10 @@ class Quiz:
     
     def random_question(self) -> int:
         random_question_index = random.randint(0, len(self.questions) - 1)
+        print(f"\nEscolhido: {random_question_index}")
+        print(f"Len: {len(self.questions)}")
+        self.question_number = random_question_index
+
         return random_question_index
     
     def select_question(self) -> int:
@@ -105,7 +118,6 @@ class Quiz:
         self.question = question_keys[0] # select the question number (q1, q2, etc...)
         self.answer = question_values[1] # select the right answer
 
-        self.questions.pop(random_question)
         return random_question
 
     def get_question(self) -> str:
@@ -123,6 +135,7 @@ class Quiz:
             else:
                 self.misses += 1
 
+            self.questions.pop(self.question_number)
             self.display_elements()
         elif len(self.questions) == 0:
             messagebox.showinfo(title = "JOGO TERMINADO", message = f"Acertos: {self.score}\nErros: {self.misses}")
