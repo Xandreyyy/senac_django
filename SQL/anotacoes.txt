@@ -9,8 +9,26 @@ SGBD -> Sistema Gereneciador de Banco de Dados // NÃO É O BANCO DE DADOS, seri
 PostgreSQL -> estrutura robusta, grátis
 Oracle -> estrutura robusta, pago
 
-SQL -> Banco de dados relacional. Relaciona dados, organiza esses dados de forma tabular
-NoSQL -> Banco de dados não-relacional
+SQL -> Banco de dados relacional. Relaciona dados, organiza esses dados de forma tabular.
+
+BD Relacional:
+atomocidade - de forma indivisivel (insert só funcionará se todos os atributos receberem dados)
+consistencia - unicidade dos dados
+isolamento - ações serão executadas em sequência, segurança
+durabilidade - dados sempre serão presistidos, independente dos fatores externos
+
+NoSQL -> Banco de dados não-relacional (Not Only SQL, não é necessário usar SQL para consultar dados)
+BD não-relacional:
+*mais rápido
+*permite registros com atributos diferentes/não é necessário preencher todos os atributos
+* Basically
+* Avaliable
+* Soft state
+* Eventual consistency
+  -> Nem sempre os dados estarão disponíveis
+BD não relacionais podem organizar dados no formato chave-valor (chave identifica registro, valores)
+BD não relacionais podem organizar dados no formato de grafos (arestas e vertices)
+Tecnologias: mongoDB, organiza dados em formato JSON
 
 DDL (data definition language) - Linguagem de definição de dados
 DML (data manipulation language) - Linguagem de manipulação de dados
@@ -31,7 +49,7 @@ M -> manipulação de dados
 V -> interação com o usuário
 C -> camada de controle
 
-No SQL:
+Em SQL:
   Objeto = Tabela
   Atributos = Campos
 

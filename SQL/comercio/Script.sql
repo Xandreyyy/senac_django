@@ -11,7 +11,7 @@ INSERT INTO cliente VALUES (
     NULL,
     "Jose",
     67,
-    'M'
+    'M',
     "948.255.880-42",
     NULL
 );
