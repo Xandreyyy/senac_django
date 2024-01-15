@@ -57,3 +57,15 @@ DROP deleta em colunas
 DELETE delete em linhas
 
 * Com DELETE e UPDATE, usa-se a clausula WHERE
+
+Relacionar tabelas:
+1ª etapa:
+    Modelagem conceitual (definir a estrutura primordial)
+    * Relações: 1:N - um para vários (ex: um cliente pode ter vários carros, o contrário não acontece)
+    * Cardinalidade de relacionamentos
+
+2ª etapa:
+    Modelagem lógica (definir tipos de dados)
+
+3ª etapa:
+    Modelagem física (criar a tabela)
