@@ -69,3 +69,12 @@ Relacionar tabelas:
 
 3ª etapa:
     Modelagem física (criar a tabela)
+
+Comando de projeção: SELECT (seleciona apenas as colunas)
+Comando de seleção: FROM (seleciona a origem dos dados)
+Comando de junção ou join: (relaciona dados)
+JOINS EM MYSQL:
+    inner join -> projeta apenas os dados comuns entres as tabelas;
+    outter join -> projeta apenas os dados diferentes entres as tabelas;
+    left join -> projeta apenas os dados comuns entres as tabelas com base na tabela da esquerda;
+    right join -> projeta apenas os dados comuns entres as tabelas com base na tabela da direita.

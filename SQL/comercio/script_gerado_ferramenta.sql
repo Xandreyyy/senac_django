@@ -19,3 +19,37 @@ CREATE TABLE carro (
 ALTER TABLE cliente ADD CONSTRAINT FK_cliente_2
     FOREIGN KEY (carro)
     REFERENCES carro (id_carro);
+
+SELECT
+    id_cliente PK, IDcliente as FK, nome_cliente, sexo_cliente, bairro, cidade
+FROM
+    cliente, endereco
+WHERE
+    id_cliente = IDcliente;
+
+SELECT
+    C.nome_cliente AS Nome, C.sexo_cliente AS Sexo, E.bairro AS Bairro, E.cidade AS Cidade
+FROM
+    cliente C, endereco E
+WHERE
+    C.id_cliente = E.IDcliente;
+
+SELECT 
+    C.nome_cliente, 
+    C.email_cliente, 
+    E.rua, 
+    E.bairro, 
+    T.numero_telefone, 
+    T.tipo_telefone
+FROM
+    cliente C
+INNER JOIN 
+    endereco E
+ON 
+    C.id_cliente = E.idcliente
+INNER JOIN
+    telefone T
+ON
+    C.id_cliente = T.idcliente
+WHERE
+    T.tipo_telefone LIKE 'COM';
