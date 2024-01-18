@@ -32,7 +32,7 @@ CREATE TABLE endereco (
     cidade VARCHAR(20) NOT NULL,
     estado CHAR(2) NOT NULL,
     IDcliente INT,
-    FOREIGN KEY (IDcliente), REFERENCES cliente (id_cliente)
+    FOREIGN KEY (IDcliente) REFERENCES cliente (id_cliente)
 );
 
 CREATE TABLE telefone (
@@ -42,3 +42,57 @@ CREATE TABLE telefone (
     IDcliente INT,
     FOREIGN KEY (IDcliente) REFERENCES cliente (id_cliente)
 );
+
+/* UTILIZANDO HAVING */
+SELECT
+    departamento, COUNT(idFuncionario) as "Qtd. funcionarios"
+FROM
+    funcionarios
+GROUP BY
+    departamento
+HAVING
+    COUNT(idFuncionario) >= 2
+ORDER BY
+    COUNT(idFuncionario) DESC;
+
+/* CONTAR QUANTOS REGISTROS TEM POR ESTADO*/
+SELECT
+    COUNT(id_endereco), estado
+FROM
+    endereco
+GROUP BY
+    estado
+HAVING
+    COUNT(id_endereco) > 1
+ORDER BY
+    COUNT(idCliente) DESC;
+
+/* USANDO BETWEEN*/
+SELECT
+    C.nome_cliente AS Cliente, E.estado AS Estado
+FROM
+    cliente C
+INNER JOIN
+    endereco E
+    ON
+    C.id_cliente = E.IDcliente
+WHERE
+    E.estado BETWEEN "PR" AND "RS";
+
+/* PROJETAR ID DOS CLIENTES ENTRE 10 E 15 */
+SELECT
+    id_cliente, nome_cliente, email_cliente
+FROM
+    cliente
+WHERE
+    id_cliente BETWEEN 10 AND 15;
+
+-- ------------------------------------------
+SELECT
+    id_cliente AS ID, nome_cliente AS Nome, idade_cliente AS Idade
+FROM
+    cliente
+WHERE
+    id_cliente BETWEEN 1 AND 10
+    AND
+    idade_cliente IN (31, 38, 45);
