@@ -1,3 +1,5 @@
 /LOGICA/aula_*
 /LOGICA/algorithms
 /LOGICA/tarifa_24h/__pycache__
+/pasta_teste/.venv/
+/DJANGO/.venv/

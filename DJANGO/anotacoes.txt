@@ -1,0 +1,13 @@
+DJANGO utiliza uma variante do MVC, o MVT (Model View Template)
+
+SETUP do ambiente virtual (virtual environment)
+    1º: py -3 -m venv .venv
+    2º: pip install django
+    3º: pip install mysqlclient
+    4º: .venv\scripts\activate -> para ativar o ambiente virtual
+    5º: deactivate -> para desativar o ambiente virtual
+
+COMEÇANDO O PROJETO:
+    verificar se django está instalado: django-admin
+    1º: django-admin startproject <NomeProjeto> . (o '.' serve para referenciar a raíz do projeto)
+    2º: python manage.py runserver
