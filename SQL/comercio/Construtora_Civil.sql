@@ -9,7 +9,7 @@ create table construtora (
 
 create table engenheiro(
     crea varchar (8) not null,
-    cpf cha varchar r(11) unique not null,
+    cpf char(11) unique not null,
     nome_eng varchar (30) not null,
     area_atuacao varchar (20) not null,
     primary key (crea)
@@ -81,7 +81,7 @@ insert into operario values ('op030','Joao Souza','Rua Lima, 89 - Porto Alegre',
                             ('op876','Luis Padilha','Av. Salgado Filho, 345 - Canoas','472-9083'),
                             ('op452','Marcos Freitas','Travessa do Canto, 67/304 - Porto Alegre','331-7838');
 
---OBRA_OPERARIO
+-- OBRA_OPERARIO
 insert into obra_operario values (03,'op010', '1997-06-15', 'preparacao da base'),
                                  (01,'op030', '1997-06-18', 'preparacao e colocacao de ferros'),
                                  (01,'op010', '1997-08-02', NULL),

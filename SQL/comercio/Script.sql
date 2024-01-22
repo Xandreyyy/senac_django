@@ -43,7 +43,7 @@ CREATE TABLE telefone (
     FOREIGN KEY (IDcliente) REFERENCES cliente (id_cliente)
 );
 
-/* UTILIZANDO HAVING */
+/* UTILIZANDO HAVING */aaa
 SELECT
     departamento, COUNT(idFuncionario) as "Qtd. funcionarios"
 FROM
