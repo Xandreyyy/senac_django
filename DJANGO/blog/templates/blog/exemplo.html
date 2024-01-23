@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXEMPLO</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ccc;
+            padding: 2rem;
+        }
+        header > ul li{
+            display: inline;
+            background-color: #b6b6b6;
+            padding: 0.8em;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transform: scale(1.0);
+            -webkit-transform:scale(1.0);
+        }
+        header > ul li:hover{
+            color: black;
+        }
+        main > h1{
+            font-size: 7rem;
+            text-align: center;
+        }
+        main > h1 span{
+            color: rgb(83, 83, 83);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h5>LOGO</h5>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+        </ul>
+    </header>
+    <main>
+        <h1>BEM-VINDO AO <span>EXEMPLO</span></h1>
+    </main>
+</body>
+</html>
