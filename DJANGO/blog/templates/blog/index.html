@@ -4,11 +4,8 @@
 
 {% block texto %}{{text}}{% endblock texto %}
 
-{% block post %}
-    {% include "global/partials/post.html" %}
-    {% include "global/partials/post.html" %}
-    {% include "global/partials/post.html" %}
-    {% include "global/partials/post.html" %}
-    {% include "global/partials/post.html" %}
-    {% include "global/partials/post.html" %}
-{% endblock post %}
+{% block posts %}
+    {% for post in posts %}
+        {% include "global/partials/post.html" %}
+    {% endfor %}
+{% endblock posts %}
