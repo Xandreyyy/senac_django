@@ -11,13 +11,18 @@ def blog(request):
                  }
     )
 
-def post(request, id):
-    print("[POST] Executando outras ações...")
+def post(request, post_id):
+    found_post = None
+    for post in posts:
+        if post['id'] == post_id:
+            found_post = post['id']
+            break
+
     return render(request,
                   "blog/index.html",
                  {
                   "title": "Post",
-                  "posts": posts   
+                  "posts": found_post
                  }
     )
 
