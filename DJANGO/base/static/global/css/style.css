@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #d8d8d8;
+    color: rgb(48, 48, 48);
+    font-family: 'Bitter', 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.content{
+    display: grid;
+    padding-inline: 20px;
+    gap: 1em;
+}
+
+.post{
+    background-color: #525252;
+    border-radius: 8px;
+    box-shadow: 10px 10px 8px rgb(0, 0, 0, .3);
+    color: rgb(230, 230, 230);
+    padding: 0.8em;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.post:hover{
+    transform: scale(1.03);
+}
+
+.post:active{
+    transform: scale(1.02);
+}
+
+@media screen and (min-width: 991px) {
+    .content{
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    }
+}
