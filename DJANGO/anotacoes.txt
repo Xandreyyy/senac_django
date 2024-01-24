@@ -11,3 +11,4 @@ COMEÇANDO O PROJETO:
     verificar se django está instalado: django-admin
     1º: django-admin startproject <NomeProjeto> . (o '.' serve para referenciar a raíz do projeto)
     2º: python manage.py runserver
+    3º: python manage.py startapp <NomeAplicação>
