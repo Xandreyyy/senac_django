@@ -2,7 +2,7 @@
 
 {% block texto %}{{text}}{% endblock texto %}
 
-{% block post %}
+{% block posts %}
     <article class="post single-post">
         <header>
             <h2 class="post-title"><a href={% url "blog:post" post.id %}>{{post.title}}</a></h2>
@@ -14,6 +14,6 @@
             </p>
         </div>
     </article>
-{% endblock post %}
+{% endblock posts %}
 
 {# consertar bloco link do single-post que tava quebrado #}

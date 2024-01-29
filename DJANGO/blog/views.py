@@ -15,14 +15,15 @@ def post(request, post_id):
     found_post = None
     for post in posts:
         if post['id'] == post_id:
-            found_post = post['id']
+            found_post = post
             break
 
-    return render(request,
-                  "blog/index.html",
+    return render(
+                request,
+                  "blog/post.html",
                  {
-                  "title": "Post",
-                  "posts": found_post
+                  "title": f"Post {post_id}",
+                  "post": found_post
                  }
     )
 

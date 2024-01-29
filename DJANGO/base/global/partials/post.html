@@ -1,10 +1,9 @@
+{% block title %}{{post.title}}{% endblock title%}
 <article class="post">
     <header>
         <h2 class="post-title"><a href={% url "blog:post" post.id %}>{{post.title}}</a></h2>
     </header>
     <div class="post_body">
-        <p>
-            {{post.body}}
-        </p>
+        {{post.body}}
     </div>
 </article>
