@@ -3,7 +3,8 @@ from blog.data import posts
 
 def blog(request):
     print("[BLOG] Executando outras ações...")
-    return render(request,
+    return render(
+                  request,
                   "blog/index.html",
                  {
                   "title": "Blog",
