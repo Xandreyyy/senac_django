@@ -4,18 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PYTHONZADA</title>
+    <style>
+        body{display: flex; align-items: center; justify-content: center; height: 90vh;}
+
+        form{
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.8rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .field-wrapper:not(:has(select)) label{display: block;}
+
+        .field-wrapper label{font-size: 1.2rem;}
+
+        .field-wrapper input{
+            font-size: 1rem;
+            padding: 0.4em;
+            border-radius: 2px;
+            border: 1px rgb(105, 105, 105) solid;
+        }
+
+        .field-wrapper input:focus{
+            border: 1px solid rgb(172, 228, 172);
+            outline: none;
+        }
+
+        .field-wrapper select{cursor: pointer;}
+
+        form button{
+            background-color: rgb(86, 202, 57);
+            border: none;
+            border-radius: 5px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5em;
+            transition: 0.2s;
+            width: min-content;
+        }
+
+        form button:hover{background-color: rgb(77, 179, 52);}
+    </style>
 </head>
 <body>
     <form>
-        <div>
+        <div class="field-wrapper">
             <label for="nome">Inserir nome:</label>
             <input type="text" id="nome">
         </div>
-        <div>
+        <div class="field-wrapper">
             <label for="idade">Inserir idade:</label>
             <input type="text" id="idade">
         </div>
-        <div>
+        <div class="field-wrapper">
             <label for="pais">País:</label>
             <select id="pais">
                 <option value="Argentina">Argentina</option>
@@ -24,6 +66,7 @@
                 <option value="Uruguai">Uruguai</option>
             </select>
         </div>
+        <button type="submit">ENVIAR</button>
     </form>
 </body>
 </html>
